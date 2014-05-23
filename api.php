@@ -29,5 +29,5 @@ if($httpCode == 404) {
 }
 
 curl_close($handle);
-
+echo "string";
 ?>

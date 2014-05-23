@@ -4,7 +4,17 @@ $( document ).ready(function() {
 		// récupère le lien
 
 		var link = ($(this).attr('src'));
-
+		var imgsrc = link;
+		var img = new Image();
+ 
+		img.onerror = function (evt){
+			alert(this.src + " can't be loaded.");
+		}
+		img.onload = function (evt){
+			alert(this.src + " is loaded.");
+		}
+		 
+		img.src = imgsrc;
 		/*$.ajax({
 		  url: link,
 		  type: 'GET',
@@ -26,7 +36,7 @@ $( document ).ready(function() {
 		    }
 		  }
 		});*/
-
+/*
 		$.ajax({
 		    type: 'GET',
 		    url: link,
@@ -43,7 +53,7 @@ $( document ).ready(function() {
 			    200: function() {
 			      alert('200  user error');
 			    }
-			  }
+			  }*/
 		    /*success: function(data){
 		        alert('horray! 200 status code!');
 		    },
@@ -58,7 +68,4 @@ $( document ).ready(function() {
 		    },*/
 		});
 
-
-
-	});
 });

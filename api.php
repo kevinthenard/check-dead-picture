@@ -1,4 +1,7 @@
 <?php
+header('Cache-Control: no-cache, must-revalidate');
+header('Content-type: application/json');
+
 if (isset($_GET['url'])) {
 	$url = $_GET["url"];
 }else{
@@ -8,6 +11,8 @@ if (isset($_GET['url'])) {
 
 
 $handle = curl_init($url);
+
+
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 
 /* Get the HTML or whatever is linked in $url. */
